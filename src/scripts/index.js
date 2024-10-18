@@ -4,26 +4,26 @@ import '../styles/main.scss';
 import data from '/src/public/data/DATA.json';
 import Utils from './untility.js';
 
-window.addEventListener("DOMContentLoaded", async () => {
-  let getdata = await data.restaurants;
-  await renderData(getdata);
+window.addEventListener("DOMContentLoaded",  () => {
+  let getdata =  data.restaurants;
+   renderData(getdata);
 });
 
-async function renderData(data){
-  const listExplore = await document.querySelector(".slider-container")
+ function renderData(data){
+  const listExplore = document.querySelector(".slider-container")
   if (!listExplore) {
     console.error("Element '.slider-container' tidak ditemukan.");
     return;
   }
 
-  let dataCard= await data.map((dt)=>{
+  let dataCard= data.map((dt)=>{
     console.log(dt)
     const elmn= document.createElement("card-item")
     elmn.data= dt
     return elmn
   })
-  await Utils.emptyElemnt(listExplore)
-  await listExplore.append(...dataCard)
+   Utils.emptyElemnt(listExplore)
+   listExplore.append(...dataCard)
 }
 
 
