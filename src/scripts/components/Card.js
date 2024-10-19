@@ -10,7 +10,6 @@ class Card extends HTMLElement {
   
     constructor() {
       super();
-      this.render(); 
     }
   
     get data() {
@@ -21,9 +20,14 @@ class Card extends HTMLElement {
       this._data = value; 
       this.render(); 
     }
+
+    connectedCallback(){
+      this.render();
+    }
   
     render() {
-      
+      // Menggunakan nilai default jika data tidak tersedia
+
       this.innerHTML = `
         <div class="card-container">
           <div class="top-card">

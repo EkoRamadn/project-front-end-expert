@@ -6,7 +6,7 @@ import Utils from './untility.js';
 
 window.addEventListener("DOMContentLoaded",  () => {
   let getdata =  data.restaurants;
-   renderData(getdata);
+  renderData(getdata);
 });
 
  function renderData(data){
@@ -17,8 +17,7 @@ window.addEventListener("DOMContentLoaded",  () => {
   }
 
   let dataCard= data.map((dt)=>{
-    console.log(dt)
-    const elmn= document.createElement("card-item")
+    let elmn= document.createElement("card-item")
     elmn.data= dt
     return elmn
   })
