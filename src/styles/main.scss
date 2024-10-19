@@ -46,11 +46,16 @@ body{
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.36);
-    z-index: 1;
+    z-index: 2;
 
     &.active{
       display: block;
+
+      @media (min-width: 506px){
+        display: none;
+      }
     }
+
   }
 
   // header style
@@ -109,7 +114,7 @@ body{
         @media (max-width: 608px) {
           height: 100vh;
           position: absolute;
-          display: block;
+          display: none;
           top: 0%;
           right: -100%;
           background-color: white;
@@ -119,13 +124,16 @@ body{
           transition: all .3s linear;
 
           &.active{
+            display: block;
             right: 0;
           }
 
-          >li{
+          >li > a{
             margin-bottom: 1rem;
             width: max-content;
             border-bottom: 2px solid transparent;
+            display: flex;
+            align-items: center;
 
             &:hover{
               border-bottom: 2px solid black;
@@ -149,8 +157,8 @@ body{
               display: flex;
 
               li,a{
-                width: 20px;
-                height: 20px;
+                width: 44px;
+                height: 44px;
 
                 svg{
                   width: 100%;
@@ -161,9 +169,10 @@ body{
           }
         }
 
-        li{
+        li> a{
           margin-inline: .8rem;
           height: 44px;
+          min-width: 44px;
           display: flex;
           align-items: center;
         }
