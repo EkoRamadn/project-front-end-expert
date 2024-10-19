@@ -36,7 +36,7 @@ class Card extends HTMLElement {
           </div>
           <article class="bottom-card">
             <h4>Rating: ${this.data.rating || 'N/A'}</h4>
-            <h3>${name || 'Default Name'}</h3>
+            <h3>${this.data.name || 'Default Name'}</h3>
             <p>${this.data.description || 'No description available.'}</p>
             <p>City: ${this.data.city || 'Unknown'}</p>
           </article>
