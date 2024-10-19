@@ -9,6 +9,7 @@
   font-family: sans-serif;
   list-style: none;
   outline: none;
+  border: none;
 }
 
 
@@ -21,6 +22,20 @@ body{
 
   &.active{
     overflow: hidden;
+  }
+
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    padding: 8px;
+    background-color: #bf1722;
+    color: white;
+    z-index: 100;
+
+    &:focus {
+      top: 0;
+   }
   }
 
   .panel{
@@ -147,20 +162,24 @@ body{
         }
 
         li{
-          margin-inline: .5rem;
+          margin-inline: .8rem;
+          height: 44px;
+          display: flex;
+          align-items: center;
         }
       }
 
       .menu-btn {
         display: none;
-        width: 25px;
-        height: 25px;
+        width: 45px;
+        height: 45px;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         gap: 5px;
         cursor: pointer;
         z-index: 2;
+        background-color: transparent;
       
         div {
           width: 25px;
@@ -276,20 +295,21 @@ body{
 
       .search-input{
         display: flex;
-        gap: .3rem;
+        gap: .6rem;
         align-items: center;
 
         input{
-          border-radius: 15px;
+          border-radius: 20px;
           padding: .5rem .7rem;
+          height: 44px;
           font-size: .8rem;
           border: 1px solid rgb(142, 142, 142);
         }
       }
 
       .filter-key,.searc-btn{
-        width: 24px;
-        height: 24px;
+        width: 25px;
+        height: 25px;
         border-radius: 5px;
         cursor: pointer;
         padding: px;
